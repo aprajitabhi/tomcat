@@ -1,0 +1,41 @@
+books {
+    display: block;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Each Book Box */
+book {
+    display: block;
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Title */
+title {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+/* Author */
+author {
+    display: block;
+    color: green;
+}
+
+/* Publisher */
+publisher {
+    display: block;
+    color: brown;
+}
+
+/* Price */
+price {
+    display: block;
+    font-weight: bold;
+    color: red;
+}

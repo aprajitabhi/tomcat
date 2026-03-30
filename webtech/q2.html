@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Table</h2>
+<button onclick="createTable()">Create Table</button>
+
+<div id="tableDiv"></div>
+
+<script>
+function createTable() {
+    let table = document.createElement("table");
+
+    // Header Row
+    let header = table.insertRow();
+    let headings = ["Name", "Roll", "Course"];
+
+    for (let i = 0; i < headings.length; i++) {
+        let th = document.createElement("th");
+        th.innerText = headings[i];
+        header.appendChild(th);
+    }
+
+    // Data Rows
+    let data = [
+        ["Aprajit", "101", "BCA"],
+        ["Rahul", "102", "BCA"],
+        ["Aman", "103", "BCA"]
+    ];
+
+    for (let i = 0; i < data.length; i++) {
+        let row = table.insertRow();
+        for (let j = 0; j < data[i].length; j++) {
+            let cell = row.insertCell();
+            cell.innerText = data[i][j];
+        }
+    }
+
+    document.getElementById("tableDiv").innerHTML = "";
+    document.getElementById("tableDiv").appendChild(table);
+}
+</script>
+    
+</body>
+</html>

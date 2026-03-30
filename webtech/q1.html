@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .container {
+            flex: 1; /* footer ko neeche push karega */
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            margin: auto;
+        }
+
+
+        h1 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        #para {
+            font-size: 18px;
+            color: #444;
+            padding: 15px;
+            border: 2px dashed #764ba2;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a3d91;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Change it</h1>
+        <p id="para">Hi I am Aprajit</p>
+        <br><br>
+        <button onClick="ptext()">Change Text</button>
+        <br><br>
+        <button onclick="changeText()">Reset Text</button>
+    </div> 
+    <script>
+        function ptext()
+        {
+            document.getElementById("para").innerText="I am Aprajit Abhi. I am the cyber expert";
+        }
+        function changeText()
+        {
+            document.getElementById("para").innerText="Hi I am Aprajit";
+        }
+    </script>
+</body>
+</html>

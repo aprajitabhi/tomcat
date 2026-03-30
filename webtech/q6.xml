@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/css" href="books.css"?>
+
+<books>
+
+    <book>
+        <title>Java Programming</title>
+        <author>James Gosling</author>
+        <publisher>Sun Microsystems</publisher>
+        <price>500</price>
+    </book>
+
+    <book>
+        <title>Web Technology</title>
+        <author>Vandana Ma'am</author>
+        <publisher>XYZ Publications</publisher>
+        <price>350</price>
+    </book>
+
+    <book>
+        <title>Data Structures</title>
+        <author>Mark Allen Weiss</author>
+        <publisher>Pearson</publisher>
+        <price>600</price>
+    </book>
+
+</books>

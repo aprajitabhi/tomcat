@@ -81,7 +81,7 @@ a:hover {
 }
 
 .error {
-    color: #e74c3c;
+    color: #fb1900;
     background-color: #faddd7;
     padding: 10px;
     border-radius: 4px;
@@ -98,7 +98,7 @@ a:hover {
 
 .logout-link {
     float: right;
-    background-color: #e74c3c;
+    background-color: #fc1900;
     color: white;
     padding: 8px 16px;
     border-radius: 4px;
@@ -106,6 +106,6 @@ a:hover {
 }
 
 .logout-link:hover {
-    background-color: #c0392b;
+    background-color: #fe1900;
     color: white;
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="timetable.css"?>
+
+<timetable>
+
+    <day name="Monday">
+        <period number="1">
+            <teacher>Dr. Supriya Shree</teacher>
+            <subject>Project and VIVA</subject>
+        </period>
+        <period number="2">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology</subject>
+        </period>
+        <period number="3">
+            <teacher>Mr. Sanu</teacher>
+            <subject>Web Technology Lab</subject>
+        </period>
+    </day>
+
+    <day name="Tuesday">
+        <period number="1">
+            <teacher>Dr. Mukesh Kumar</teacher>
+            <subject>Project and VIVA</subject>
+        </period>
+        <period number="2">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology Lab</subject>
+        </period>
+        <period number="3">
+            <teacher>Mr. Piyush Verma</teacher>
+            <subject>E-Commerce</subject>
+        </period>
+    </day>
+
+    <day name="Wednesday">
+        <period number="1">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology</subject>
+        </period>
+        <period number="3">
+            <teacher>Mr. Piyush Verma</teacher>
+            <subject>E-Commerce</subject>
+        </period>
+    </day>
+
+    <day name="Thursday">
+        <period number="1">
+            <teacher>Mr. Piyush Verma</teacher>
+            <subject>E-Commerce</subject>
+        </period>
+        <period number="2">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology Lab</subject>
+        </period>
+        <period number="3">
+            <teacher>Dr. Rakesh Kumar Pathak</teacher>
+            <subject>Project and VIVA</subject>
+        </period>
+    </day>
+
+    <day name="Friday">
+        <period number="1">
+            <teacher>Mr. Piyush Verma</teacher>
+            <subject>E-Commerce</subject>
+        </period>
+        <period number="2">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology</subject>
+        </period>
+    </day>
+
+    <day name="Saturday">
+        <period number="1">
+            <teacher>Ms. Vandana</teacher>
+            <subject>Web Technology</subject>
+        </period>
+        <period number="2">
+            <teacher>Mr. Sanu</teacher>
+            <subject>Web Technology Lab</subject>
+        </period>
+        <period number="3">
+            <teacher>Dr. Supriya Shree</teacher>
+            <subject>Activity / Class</subject>
+        </period>
+        <period number="4">
+            <teacher>Dr. Supriya Shree</teacher>
+            <subject>Foundation and Mentoring</subject>
+        </period>
+    </day>
+
+</timetable>

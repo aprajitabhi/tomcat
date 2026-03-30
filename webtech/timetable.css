@@ -1,0 +1,52 @@
+timetable {
+    display: block;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Each Day Box */
+day {
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* Day Name */
+day::before {
+    content: "Day: " attr(name);
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 8px;
+}
+
+/* Each Period */
+period {
+    display: block;
+    margin-left: 15px;
+    padding: 5px;
+    border-left: 3px solid gray;
+    margin-bottom: 5px;
+}
+
+/* Period Number */
+period::before {
+    content: "Period " attr(number) ": ";
+    font-weight: bold;
+    color: black;
+}
+
+/* Teacher */
+teacher {
+    display: block;
+    color: green;
+}
+
+/* Subject */
+subject {
+    display: block;
+    color: black;
+}
