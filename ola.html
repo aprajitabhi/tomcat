@@ -25,21 +25,25 @@
         }
         form {
             background-color: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            min-width: 350px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+            min-width: 400px;
+            max-width: 500px;
         }
         input, select, button {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
         button {
             background-color: #ff5722;
             color: white;
             border: none;
             cursor: pointer;
+            margin-bottom: 0;
         }
         button:hover {
             background-color: #e64a19;
@@ -52,15 +56,15 @@
     </div>
     <div class="main-container">
         <form id="bookingForm">
-            <input type="text" id="pickup" placeholder="Enter pickup location" required><br><br>
-            <input type="text" id="drop" placeholder="Enter drop location" required><br><br>
+            <input type="text" id="pickup" placeholder="Enter pickup location" required>
+            <input type="text" id="drop" placeholder="Enter drop location" required>
             
-            <label for="vehicle">Select Vehicle Type:</label><br>
+            <label for="vehicle">Select Vehicle Type:</label>
             <select id="vehicle" name="vehicle" required>
                 <option value="mini">Mini - ₹100</option>
                 <option value="prime">Prime - ₹150</option>
                 <option value="auto">Auto - ₹80</option>
-            </select><br><br>
+            </select>
             
             <button type="submit">Book Ride</button>
         </form>
