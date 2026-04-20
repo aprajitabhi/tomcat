@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: black;
+            text-align: center;
+            background-color: silver;
+            padding: 15px;
+            margin: 0 0 20px 0;
+        }
+        .cart {
+            background-color: transparent;
+            color: black;
+            border: 1px solid #999;
+            padding: 15px;
+            margin: 10px auto 0 auto;
+            max-width: 600px;
+            width: 100%;
+        }
+        .cart:first-child {
+            margin-top: 0;
+        }
+        .book {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .book h3 {
+            margin: 0 0 5px 0;
+        }
+        .category {
+            color: #666;
+            font-size: 14px;
+        }
+        input, button {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Library</h1>
+    <div>
+        <input type="text" placeholder="Search books..." id="search">
+        <button onclick="searchBooks()">Search</button>
+    </div>
+    <div class="cart">
+        <div class="book">
+            <h3>Clean Code</h3>
+            <p class="category">Author: Robert C. Martin</p>
+            <p>Price: 40.00</p>
+        </div>
+    </div>
+    <div class="cart">
+        <div class="book">
+            <h3>Clean Code</h3>
+            <p class="category">Author: Martin</p>
+            <p>Price: 40.00</p>
+        </div>
+    </div>
+    <div class="cart">
+        <div class="book">
+            <h3>The Pragmatic Programmer</h3>
+            <p class="category">Author: Andrew Hunt and David Thomas</p>
+            <p>Price: 35.00</p>
+        </div>
+    </div>
+    <script>
+        function searchBooks() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const books = document.querySelectorAll('.book');
+            books.forEach(book => {
+                const title = book.querySelector('h3').textContent.toLowerCase();
+                const author = book.querySelector('.category').textContent.toLowerCase();
+                if (title.includes(query) || author.includes(query)) {
+                    book.style.display = '';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

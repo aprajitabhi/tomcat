@@ -1,32 +1,3 @@
-<%@ page import="java.util.*" %>
-<%
-    String user = (String) session.getAttribute("user");
-    if (user == null) {
-        response.sendRedirect("index.jsp");
-        return;
-    }
-
-    List<String> inbox = (List<String>) session.getAttribute("inbox");
-    if (inbox == null) {
-        inbox = new ArrayList<>();
-        session.setAttribute("inbox", inbox);
-    }
-
-    List<String> sent = (List<String>) session.getAttribute("sent");
-    if (sent == null) {
-        sent = new ArrayList<>();
-        session.setAttribute("sent", sent);
-    }
-
-    String to = request.getParameter("to");
-    String subject = request.getParameter("subject");
-    String body = request.getParameter("body");
-    if (to != null && !to.trim().isEmpty()) {
-        String mail = "To: " + to + " | Subject: " + (subject == null ? "" : subject) + " | Body: " + (body == null ? "" : body) + " | Sent: " + new Date();
-        sent.add(mail);
-        request.setAttribute("mailMessage", "Sent mail details updated.");
-    }
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <%@ page import="java.util.*" %>
+    <%
+        String user = (String) session.getAttribute("user");
+        if (user == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        List<String> inbox = (List<String>) session.getAttribute("inbox");
+        if (inbox == null) {
+            inbox = new ArrayList<>();
+            session.setAttribute("inbox", inbox);
+        }
+
+        List<String> sent = (List<String>) session.getAttribute("sent");
+        if (sent == null) {
+            sent = new ArrayList<>();
+            session.setAttribute("sent", sent);
+        }
+
+        String to = request.getParameter("to");
+        String subject = request.getParameter("subject");
+        String body = request.getParameter("body");
+        if (to != null && !to.trim().isEmpty()) {
+            String mail = "To: " + to + " | Subject: " + (subject == null ? "" : subject) + " | Body: " + (body == null ? "" : body) + " | Sent: " + new Date();
+            sent.add(mail);
+            request.setAttribute("mailMessage", "Sent mail details updated.");
+        }
+    %>
     <h2>Welcome, <%= user %>!</h2>
     <p><a href="logout.jsp" class="logout-link">Logout</a></p>
 

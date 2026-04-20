@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .products, .cart {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="products">
+            <h2>Products</h2>
+            <div id="productList">
+                <div class="item">
+                    <span>Phone: 5000</span><button onclick="addToCart('Phone', 5000)">Buy</button>
+                </div>
+                <div class="item">
+                    <span>Laptop: 10000</span><button onclick="addToCart('Laptop', 10000)">Buy</button>
+                </div>
+                <div class="item">
+                    <span>Tablet: 3000</span><button onclick="addToCart('Tablet', 3000)">Buy</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal">Total: 0</div>
+        </div>
+    </div>
+
+    <script>
+        let total = 0;
+        let cartItems = [];
+
+        function addToCart(name, amount) {
+            cartItems.push({name, amount});
+            total += amount;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = `${item.name}: ${item.amount}`;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+            const cartTotal = document.getElementById('cartTotal');
+            cartTotal.textContent = `Total: ${total}`;
+        }
+    </script>
+</body>
+</html>
