@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLA BOOKING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .heading {
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-width: 350px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>OLA BOOKING</h1>
+    </div>
+    <div class="main-container">
+        <form id="bookingForm">
+            <input type="text" id="pickup" placeholder="Enter pickup location" required><br><br>
+            <input type="text" id="drop" placeholder="Enter drop location" required><br><br>
+            
+            <label for="vehicle">Select Vehicle Type:</label><br>
+            <select id="vehicle" name="vehicle" required>
+                <option value="mini">Mini - ₹100</option>
+                <option value="prime">Prime - ₹150</option>
+                <option value="auto">Auto - ₹80</option>
+            </select><br><br>
+            
+            <button type="submit">Book Ride</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const pickup = document.getElementById('pickup').value;
+            const drop = document.getElementById('drop').value;
+            const vehicleSelect = document.getElementById('vehicle');
+            const selectedOption = vehicleSelect.options[vehicleSelect.selectedIndex].text;
+            
+            alert(`Booking Details:\nPickup: ${pickup}\nDrop: ${drop}\nVehicle: ${selectedOption}`);
+        });
+    </script>
+</body>
+</html>
