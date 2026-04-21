@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - DOM Manipulation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        /* Flexbox Gallery */
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid white;
+        }
+
+        .gallery-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Grid Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Image Card Styles */
+        .image-card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.4s ease;
+        }
+
+        .image-info {
+            padding: 15px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .image-info h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .image-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Flexbox Gallery - Specific styles */
+        .gallery-flex .image-card {
+            width: 200px;
+            height: 280px;
+        }
+
+        .gallery-flex .image-card img {
+            height: 200px;
+        }
+
+        /* Base styles for all images */
+        img {
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .gallery-flex {
+                gap: 15px;
+            }
+
+            .gallery-flex .image-card {
+                width: 150px;
+                height: 220px;
+            }
+
+            .gallery-flex .image-card img {
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Image Gallery</h1>
+        <p class="subtitle">Hover over images to see DOM manipulation effects (Size change & Border)</p>
+
+        <!-- Flexbox Gallery Section -->
+        <div class="gallery-section">
+            <h2 class="section-title">Gallery - All Pictures</h2>
+            <div class="gallery-flex" id="flexGallery">
+                <div class="image-card">
+                    <img src="n/1760113705344.jpg" alt="Gallery Image 1">
+                    <div class="image-info">
+                        <h3>1</h3>
+                        <p>Certificate</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/1760113706240.jpg" alt="Gallery Image 2">
+                    <div class="image-info">
+                        <h3>2</h3>
+                        <p>My Work</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251113-WA0019.jpg" alt="Gallery Image 3">
+                    <div class="image-info">
+                        <h3>3</h3>
+                        <p>Guest of Honor</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251125-WA0026.jpg" alt="Gallery Image 4">
+                    <div class="image-info">
+                        <h3>4</h3>
+                        <p>Family Time</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251125-WA0031.jpg" alt="Gallery Image 5">
+                    <div class="image-info">
+                        <h3>5</h3>
+                        <p>Brother</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251127-WA0223.jpg" alt="Gallery Image 6">
+                    <div class="image-info">
+                        <h3>6</h3>
+                        <p>Elder Sister</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251127-WA0238.jpg" alt="Gallery Image 7">
+                    <div class="image-info">
+                        <h3>7</h3>
+                        <p>Cute Sister</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251127-WA0281.jpg" alt="Gallery Image 8">
+                    <div class="image-info">
+                        <h3>8</h3>
+                        <p>Sister Wedding</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251129-WA0361.jpg" alt="Gallery Image 9">
+                    <div class="image-info">
+                        <h3>9</h3>
+                        <p>My Style/p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG-20251215-WA0051.jpg" alt="Gallery Image 10">
+                    <div class="image-info">
+                        <h3>10</h3>
+                        <p>Papa</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20231207_203300_007.jpg" alt="Gallery Image 11">
+                    <div class="image-info">
+                        <h3>11</h3>
+                        <p>My Style</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223036.jpg" alt="Gallery Image 12">
+                    <div class="image-info">
+                        <h3>12</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223049.jpg" alt="Gallery Image 13">
+                    <div class="image-info">
+                        <h3>13</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223118.jpg" alt="Gallery Image 14">
+                    <div class="image-info">
+                        <h3>14</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223211.jpg" alt="Gallery Image 15">
+                    <div class="image-info">
+                        <h3>15</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223253.jpg" alt="Gallery Image 16">
+                    <div class="image-info">
+                        <h3>16</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223408.jpg" alt="Gallery Image 17">
+                    <div class="image-info">
+                        <h3>17</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223423.jpg" alt="Gallery Image 18">
+                    <div class="image-info">
+                        <h3>18</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223429.jpg" alt="Gallery Image 19">
+                    <div class="image-info">
+                        <h3>19</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223551.jpg" alt="Gallery Image 20">
+                    <div class="image-info">
+                        <h3>20</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251105_223638.jpg" alt="Gallery Image 21">
+                    <div class="image-info">
+                        <h3>21</h3>
+                        <p>It's me</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251124_225048.jpg" alt="Gallery Image 22">
+                    <div class="image-info">
+                        <h3>22</h3>
+                        <p>My Family</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251125_032218_1.jpg" alt="Gallery Image 23">
+                    <div class="image-info">
+                        <h3>23</h3>
+                        <p>Sister's Photo</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251213_183443.jpg" alt="Gallery Image 24">
+                    <div class="image-info">
+                        <h3>24</h3>
+                        <p>Sister's Photo</p>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="n/IMG_20251215_023958.jpg" alt="Gallery Image 25">
+                    <div class="image-info">
+                        <h3>25</h3>
+                        <p>Papa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageCards = document.querySelectorAll('.image-card');
+            imageCards.forEach(card => {
+                card.addEventListener('mouseover', function() {
+                    this.style.border = '3px solid #ff0000';
+                    const img = this.querySelector('img');
+                    img.style.height = '250px';
+                });
+                card.addEventListener('mouseout', function() {
+                    this.style.border = '';
+                    const img = this.querySelector('img');
+                    img.style.height = '200px';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
